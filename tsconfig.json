@@ -1,0 +1,17 @@
+{
+  "// note": "Node 23.6+ runs these .ts files directly via type-stripping. This config is only for editor IntelliSense and type-checking (npx tsc --noEmit).",
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": ["ES2023"],
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "bin/**/*.ts", "demo/**/*.ts", "test/**/*.ts"]
+}

@@ -1,0 +1,17 @@
+# Crypto material and live stores — never commit these
+.cryptostore/
+*.kek
+*.key
+ledger.jsonl
+
+# Demo / scratch output
+demo-store/
+tmp/
+*.log
+
+# Node
+node_modules/
+
+# Local editor / tooling settings
+.claude/
+.DS_Store

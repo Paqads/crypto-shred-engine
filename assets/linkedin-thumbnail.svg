@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <style>
+    text{font-family:'Helvetica Neue',Arial,sans-serif;}
+    .mono{font-family:'Menlo','SF Mono',ui-monospace,monospace;}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1 1L8 5L1 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0B1220"/>
+  <rect x="722" width="478" height="630" fill="#0E1726"/>
+  <rect width="6" height="630" fill="#2DD4BF"/>
+
+  <rect x="70" y="64" width="17" height="13" rx="2.5" fill="#2DD4BF"/>
+  <path d="M73.5 64 v-4 a4.6 4.6 0 0 1 10 0 v4" fill="none" stroke="#2DD4BF" stroke-width="2.4"/>
+  <text x="99" y="77" font-size="17" letter-spacing="2" font-weight="600" fill="#2DD4BF">CRYPTOGRAPHIC ERASURE · OPEN SOURCE</text>
+
+  <text x="68" y="156" font-size="50" font-weight="700" fill="#E8EEF6">Crypto-Shredding +</text>
+  <text x="68" y="216" font-size="50" font-weight="700" fill="#E8EEF6">Proof-of-Deletion Engine</text>
+  <rect x="70" y="232" width="128" height="5" rx="2.5" fill="#2DD4BF"/>
+
+  <text x="70" y="288" font-size="26" fill="#9FB2C6">Delete data by destroying its key — then prove it.</text>
+
+  <rect x="70" y="334" width="22" height="22" rx="6" fill="#2DD4BF" fill-opacity="0.14" stroke="#2DD4BF" stroke-width="1.5"/>
+  <path d="M75.5 345 L79.5 349 L87 339" fill="none" stroke="#2DD4BF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="106" y="352" font-size="24" fill="#D7E0EC">Unique AES-256-GCM key for every record</text>
+
+  <rect x="70" y="378" width="22" height="22" rx="6" fill="#2DD4BF" fill-opacity="0.14" stroke="#2DD4BF" stroke-width="1.5"/>
+  <path d="M75.5 389 L79.5 393 L87 383" fill="none" stroke="#2DD4BF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="106" y="396" font-size="24" fill="#D7E0EC">Destroy the key → ciphertext unrecoverable</text>
+
+  <rect x="70" y="422" width="22" height="22" rx="6" fill="#2DD4BF" fill-opacity="0.14" stroke="#2DD4BF" stroke-width="1.5"/>
+  <path d="M75.5 433 L79.5 437 L87 427" fill="none" stroke="#2DD4BF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="106" y="440" font-size="24" fill="#D7E0EC">Signed, tamper-evident Certificate of Erasure</text>
+
+  <rect x="70" y="466" width="22" height="22" rx="6" fill="#2DD4BF" fill-opacity="0.14" stroke="#2DD4BF" stroke-width="1.5"/>
+  <path d="M75.5 477 L79.5 481 L87 471" fill="none" stroke="#2DD4BF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="106" y="484" font-size="24" fill="#D7E0EC">Verify erasure offline · GDPR &amp; HIPAA ready</text>
+
+  <line x1="70" y1="520" x2="694" y2="520" stroke="#22304A" stroke-width="1.5"/>
+  <text x="70" y="557" font-size="23" class="mono" fill="#2DD4BF">github.com/Paqads/crypto-shred-engine</text>
+  <text x="70" y="592" font-size="17" fill="#7C8DA3">AES-256-GCM · Ed25519 · Node + TypeScript · Zero dependencies · MIT</text>
+
+  <circle cx="806" cy="172" r="19" fill="none" stroke="#F59E0B" stroke-width="9"/>
+  <rect x="822" y="167" width="92" height="10" rx="3" fill="#F59E0B"/>
+  <rect x="892" y="177" width="8" height="13" rx="1.5" fill="#F59E0B"/>
+  <rect x="906" y="177" width="8" height="16" rx="1.5" fill="#F59E0B"/>
+  <rect x="884" y="165" width="4" height="15" fill="#0E1726"/>
+  <path d="M928 161 L941 155 L937 170 Z" fill="#F59E0B"/>
+  <path d="M934 185 L949 189 L936 197 Z" fill="#F8B44A"/>
+  <path d="M953 169 L966 165 L961 181 Z" fill="#F59E0B" opacity="0.85"/>
+  <path d="M922 201 L933 205 L920 211 Z" fill="#F8B44A" opacity="0.8"/>
+
+  <line x1="900" y1="214" x2="900" y2="262" stroke="#2DD4BF" stroke-width="4" marker-end="url(#ar)"/>
+
+  <rect x="772" y="284" width="340" height="252" rx="18" fill="#0F1A2E" stroke="#26384F" stroke-width="1.5"/>
+  <circle cx="796" cy="320" r="5" fill="#2DD4BF"/>
+  <text x="810" y="325" font-size="17" letter-spacing="1.4" font-weight="600" fill="#2DD4BF">CERTIFICATE OF ERASURE</text>
+  <line x1="794" y1="340" x2="1090" y2="340" stroke="#22304A" stroke-width="1.2"/>
+  <rect x="794" y="358" width="220" height="9" rx="4.5" fill="#26384F"/>
+  <rect x="794" y="380" width="168" height="9" rx="4.5" fill="#26384F"/>
+  <text x="794" y="420" font-size="16" class="mono" fill="#88A0BC">key  c61c2f77…2e26ee7c</text>
+  <text x="794" y="447" font-size="16" fill="#93A4B8">status  <tspan fill="#F59E0B" font-weight="600">DESTROYED</tspan></text>
+  <text x="794" y="471" font-size="14" fill="#6E8298">erased 2026-06-15</text>
+  <circle cx="1052" cy="470" r="33" fill="#2DD4BF" fill-opacity="0.12" stroke="#2DD4BF" stroke-width="3"/>
+  <path d="M1038 470 L1048 481 L1068 457" fill="none" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,5 +1,10 @@
 # Crypto-Shredding + Proof-of-Deletion Engine
 
+[![CI](https://github.com/Paqads/crypto-shred-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/Paqads/crypto-shred-engine/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Node](https://img.shields.io/badge/node-%E2%89%A523.6-brightgreen)
+![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
+
 > Encrypt every record under its own key. To **delete** data, destroy the key — the
 > ciphertext becomes permanently unrecoverable. Because the key is gone, you can
 > **prove** deletion instead of merely asserting it.
@@ -74,6 +79,36 @@ CryptoShredEngine.verifyCertificate(cert); // → { valid: true, checks: {...} }
 ```
 
 ---
+
+## Architecture
+
+```mermaid
+flowchart TD
+    PT(["Plaintext record"]) -->|"seal · AES-256-GCM"| CT["Ciphertext<br/>records/"]
+    DEK["Unique 256-bit DEK"] -. encrypts .-> CT
+    KEK[("Master KEK<br/>HSM or KMS")] -. wraps .-> WDEK
+    DEK -->|"wrap under KEK"| WDEK["Wrapped DEK — the only copy<br/>keys/"]
+    DEK -->|"SHA-256 fingerprint"| CREATE
+    CT -->|"SHA-256 content hash"| CREATE
+
+    subgraph LEDGER ["Append-only · hash-chained · Ed25519-signed ledger"]
+      direction LR
+      CREATE["CREATE"] --> SHRED["SHRED / EXPIRE"]
+    end
+
+    WDEK ==>|"shred destroys the key"| GONE(("key destroyed"))
+    GONE --> SHRED
+    CT -.->|"no key path exists"| LOCKED["Ciphertext survives but is<br/>permanently unrecoverable"]
+
+    SHRED --> CERT{{"Certificate of Erasure"}}
+    CERT -->|"verify offline · public key only"| PROVEN(["erasure proven ✓"])
+```
+
+**Two moves.** *Store:* each record is sealed under its own DEK; the DEK is wrapped
+under the KEK and that wrapped blob is the only copy of the key; the key fingerprint
+and ciphertext hash are committed to the signed ledger. *Erase & prove:* destroying
+the wrapped DEK crypto-shreds the record, a signed `SHRED`/`EXPIRE` event is chained
+into the ledger, and `proveDeletion()` emits an offline-verifiable Certificate of Erasure.
 
 ## How it works
 
